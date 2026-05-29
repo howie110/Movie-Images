@@ -26,9 +26,9 @@ body {
 
 #stage img {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: clamp(24px, 7vh, 96px) clamp(12px, 3vw, 56px);
+  width: calc(100% - clamp(24px, 6vw, 112px));
+  height: calc(100% - clamp(48px, 14vh, 192px));
   object-fit: contain;
   opacity: 0;
   transition: opacity 900ms ease;
