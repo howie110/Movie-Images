@@ -3,10 +3,11 @@ import { extname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
+const moviesRoot = join(root, "movies");
 const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const ignoredDirectories = new Set([".git", "node_modules", ".vercel"]);
 
-const images = await collectImages(root);
+const images = await collectImages(moviesRoot);
 
 await writeFile(
   join(root, "images.json"),
